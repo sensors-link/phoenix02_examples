@@ -1,0 +1,44 @@
+twc_bus sebus_rcv_send_data parm0 parm1...parm10
+//0: 0 sel twc_pin_18_19,10_11
+//1: 0 9000 mode ,1 epc mode
+//2: 0 tx level low en, 1 tx high en
+//3: 0 match,1 rx_dec_no_match_cmd_int 
+//4: rx filt 2n cycle  0<=n<16
+//5: sel cmd no 1<=x<=4
+//6:7 16bit cmdaddr,cmd[15:9]addr[8:0]
+//8:9 16bit cmdaddrmask,set1 ignore match
+
+twc_bus swanbus_rcv_send_data parm0 parm1...parm17
+//0:tx baud 
+//1:rx baud
+/*
+        case 0:txbaud  = TWC_SWBR_1K;break;
+        case 1:txbaud  = TWC_SWBR_2K;break;
+        case 2:txbaud  = TWC_SWBR_3K;break;
+        case 3:txbaud  = TWC_SWBR_4K;break;
+        case 4:txbaud  = TWC_SWBR_5K;break;
+        case 5:txbaud  = TWC_SWBR_6K;break;
+        case 6:txbaud  = TWC_SWBR_8K;break;
+        case 7:txbaud  = TWC_SWBR_10K;break;
+        case 8:txbaud  = TWC_SWBR_12K;break;
+        case 9:txbaud  = TWC_SWBR_15K;break;
+        case 10:txbaud = TWC_SWBR_20K;break;
+        case 12:txbaud = TWC_SWBR_25K;break;
+        case 13:txbaud = TWC_SWBR_30K;break;
+        case 14:txbaud = TWC_SWBR_40K;break;
+        case 15:txbaud = TWC_SWBR_50K;break;
+        case 16:txbaud = TWC_SWBR_60K;break;
+*/
+2: 0 tx_level_low_en,1 tx_level_high_en
+3: 0 match_int, 1 tx_dec_no_match_int
+4: 0 rx_filt_2n_cycle 0-15
+5: 0 rx_parity_even,1 han ming ma
+6: 0 tx_code_nrz,1 machist
+7: 0 tx_parity_even ,1 tx_parity_odd
+8: txbitcfg 0-3=>8bit 16 24 32
+9: gap 0-255
+10:gapcomp 0-127
+11:cmd no 1-4
+12:13 cmd[15:8]:addr[7:0]
+14:15 cmdmask
+parm12:parm13:parm16:parm17: combin txdata(32bit)
