@@ -9,21 +9,14 @@
  *
  */
 
-
 #include "lib_include.h"
 
-
-
-
-
-
-int main(void)
-{
-    debug_frmwrk_init();
-	_DBG_("p09 input counter pulse,press any key to print cnt value");
-    TIM_CounterInit(TIM1,TIM_CNT_POLARITY_HIGH,TIM1_CNT_PORT_P8_P9);
+int main(void) {
+    printf("p09 input counter pulse,press any key to print cnt value\r\n");
+    TIM_CounterInit(TIM1, TIM_CNT_POLARITY_HIGH, TIM1_CNT_PORT_P8_P9);
     _DG;
     u32 cnt = TIM1->CTVAL;
-    _DBD32(cnt);
-    while(1);
+    printf("cnt:%d\r\n", cnt);
+    while (1)
+        ;
 }
