@@ -27,7 +27,7 @@ void LPT_IrqHandler(void)
         tog = 1;
     }
     LPT_ClrIntFlag();
-};
+}
 
 int main(void) 
 {
