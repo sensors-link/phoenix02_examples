@@ -37,6 +37,7 @@ int main(void)
     PLIC_SetPriority(LPT_IRQn, 1);
     LPT_ClrIntFlag();
     LPT_EnableIRQ();
+    LPT_EnableControl(ENABLE);
     
     while (1)
     {
