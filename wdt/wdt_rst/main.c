@@ -32,7 +32,7 @@ int main(void)
             ;
     }
     
-    WDT_Init(60, PMU_CR_LPTCLKSEL_LRC, WDT_OV_RST);
+    WDT_Init(2000, PMU_CR_LPTCLKSEL_LRC, WDT_OV_RST);
     
     while (1)
         ;
