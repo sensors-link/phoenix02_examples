@@ -39,8 +39,6 @@ void delay_us(u32 delay)
 
 void gpio_out_example(void)
 {
-    int i;
-
     timer_init();
 
     GPIO_PinConfigure(LED_PIN, DISABLE, ENABLE, ENABLE, DISABLE, DISABLE);
