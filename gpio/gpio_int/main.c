@@ -11,19 +11,22 @@
 
 #include "lib_include.h"
 
-#define TEST_PIN GPIO_PIN8
+#define TEST_PIN   GPIO_PIN8
 
-#define PIN_ON GPIO_SetPin(TEST_PIN)
-#define PIN_OFF GPIO_ClrPin(TEST_PIN)
+#define PIN_ON     GPIO_SetPin(TEST_PIN)
+#define PIN_OFF    GPIO_ClrPin(TEST_PIN)
 
-void IOM_IrqHandler(void) {
+void IOM_IrqHandler(void) 
+{
     if (GPIO_GetIntFlag() == TEST_PIN)
+    {
         printf("iom int\r\n");
+    }
     GPIO_ClrIntFlag(TEST_PIN);
 };
 
-int main(void) {
-    int i;
+int main(void) 
+{
     GPIO_PinConfigure(TEST_PIN, DISABLE, DISABLE, ENABLE, DISABLE,
                       DISABLE); // gpio pd in
     GPIO_PinIntConfig(TEST_PIN, PIN_INT_TYPE_EDGE, PIN_INT_POL_LOW);
